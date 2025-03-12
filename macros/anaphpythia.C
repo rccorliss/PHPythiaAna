@@ -17,7 +17,7 @@ void anaphpythia(const int nevents = 0,
   /////////////////////////////////////////////////////////////////
   //  Reconstruction Modules...
  
-  SubsysReco *anaphpythia = new AnaPHPythia("anaphpythia.root");
+  SubsysReco *anaphpythia = new RccAnaPHPythia("rccanaphpythia.root");
   se->registerSubsystem(anaphpythia);
 
   Fun4AllDstInputManager *in1 = new Fun4AllDstInputManager("DSTin1", "DST");

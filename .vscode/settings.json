@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "RccAnaPHPythia.C": "cpp"
+        "RccAnaPHPythia.C": "cpp",
+        "anaphpythia.C": "cpp"
     }
 }
