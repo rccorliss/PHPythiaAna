@@ -50,7 +50,7 @@ int RccAnaPHPythia::InitRun(PHCompositeNode *topNode)
   Double_t pt_low = 0.1;
   Double_t pt_high = 5.;
 
-  
+
   nProcessed=0;
  h_ptpi             = new TH1D("h_ptpi","pt",100,pt_low,pt_high);
   h_pt_gpi           = new TH1D("h_pt_gpi","pt_g",100,pt_low,pt_high);
@@ -140,7 +140,7 @@ int RccAnaPHPythia::process_event(PHCompositeNode *topNode)
   for (unsigned int ipart=0; ipart<phpythia->size(); ipart++)
     {
       TMCParticle *part = phpythia->getParticle(ipart);
-      if (strcmp(part->GetName(),"Photon")==0)
+      if (strcmp(part->GetName(),"gamma")==0)
         {
       TLorentzVector v;
       v.SetPxPyPzE(part->GetPx(), part->GetPy(), part->GetPz(), part->GetEnergy());
