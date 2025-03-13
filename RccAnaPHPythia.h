@@ -2,13 +2,14 @@
 #define __RCCANAPHPYTHIA_H__
 
 #include "SubsysReco.h"
+#include <TLorentzVector.h>
 
 class PHCompositeNode;
 class PHPythiaHeader;
 class PHPythiaContainer;
 
-//class TH1D;
-//class TH2D;
+class TH1D;
+class TH2D;
 //class TLorentzVector;
 
 class RccAnaPHPythia: public SubsysReco
