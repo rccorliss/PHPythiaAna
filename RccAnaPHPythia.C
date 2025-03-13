@@ -129,15 +129,15 @@ int RccAnaPHPythia::process_event(PHCompositeNode *topNode)
       }
   }
   //holders for the two current photons, and a counter for how many we have found in this event:
-  TLorentzVector photon1 = 0;
-  TLorentzVector photon2 = 0;
+  TLorentzVector photon1(0,0,0,0);
+  TLorentzVector photon2(0,0,0,0);
   int nPhotons = 0;
 
   //loop over particles to find the two with name "Photon"
   for (int ipart=0; ipart<phpythia->size(); ipart++)
     {
       TMCParticle *part = phpythia->getParticle(ipart);
-      if (part->GetName() == "Photon")
+      if (part->GetName().compare("Photon")==0)
         {
       TLorentzVector v;
       v.SetPxPyPzE(part->GetPx(), part->GetPy(), part->GetPz(), part->GetEnergy());

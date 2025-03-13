@@ -27,9 +27,9 @@ public:
   int nProcessed;
 
   //settings:
-  const  int maxPhotons=10;
-  const Double_t pt_low = 0.1;
-  const Double_t pt_high = 5.;
+  static const  int maxPhotons=10;
+  static const Double_t pt_low = 0.1;
+  static const Double_t pt_high = 5.;
 
   //histograms to hold info about real and fake photons:
   TH1D *h_ptpi;
