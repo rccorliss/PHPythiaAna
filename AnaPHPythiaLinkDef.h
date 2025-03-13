@@ -4,6 +4,7 @@
 #pragma link off all classes;
 #pragma link off all functions;
 
+#pragma link C++ class RccAnaPHPythia+;
 #pragma link C++ class AnaPHPythia+;
 #pragma link C++ class AnaPHHijing+;
 #pragma link C++ class AnaPHPyBBar+;
