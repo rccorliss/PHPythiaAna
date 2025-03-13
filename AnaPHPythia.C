@@ -25,7 +25,7 @@
 
 #include <PHPythiaHeader.h>
 #include <PHPythiaContainer.h>
-#include <RccAnaPHPythia.h>
+#include <AnaPHPythia.h>
 
 using namespace std;
 
