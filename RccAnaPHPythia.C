@@ -134,10 +134,10 @@ int RccAnaPHPythia::process_event(PHCompositeNode *topNode)
   int nPhotons = 0;
 
   //loop over particles to find the two with name "Photon"
-  for (int ipart=0; ipart<phpythia->size(); ipart++)
+  for (unsigned int ipart=0; ipart<phpythia->size(); ipart++)
     {
       TMCParticle *part = phpythia->getParticle(ipart);
-      if (part->GetName().compare("Photon")==0)
+      if (strcmp(part->GetName(),"Photon")==0)
         {
       TLorentzVector v;
       v.SetPxPyPzE(part->GetPx(), part->GetPy(), part->GetPz(), part->GetEnergy());
@@ -170,7 +170,7 @@ int RccAnaPHPythia::process_event(PHCompositeNode *topNode)
   }
 
   //mix each photon with the last N photons:
-  for (int i=0; i<previousPhoton.size(); i++) {
+  for (unsigned int i=0; i<previousPhoton.size(); i++) {
     if(nPhotons>0) {
       TLorentzVector fake=photon1+previousPhoton[i];
       h_massfakepi->Fill(fake.M());
