@@ -7,9 +7,9 @@ class PHCompositeNode;
 class PHPythiaHeader;
 class PHPythiaContainer;
 
-class TH1D;
-class TH2D;
-class TLorentzVector;
+//class TH1D;
+//class TH2D;
+//class TLorentzVector;
 
 class RccAnaPHPythia: public SubsysReco
 {
