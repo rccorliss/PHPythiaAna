@@ -47,7 +47,10 @@ RccAnaPHPythia::~RccAnaPHPythia()
 // Done at the beginning of processing
 int RccAnaPHPythia::InitRun(PHCompositeNode *topNode)
 {
+  Double_t pt_low = 0.1;
+  Double_t pt_high = 5.;
 
+  
   nProcessed=0;
  h_ptpi             = new TH1D("h_ptpi","pt",100,pt_low,pt_high);
   h_pt_gpi           = new TH1D("h_pt_gpi","pt_g",100,pt_low,pt_high);
