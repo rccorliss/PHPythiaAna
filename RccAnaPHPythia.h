@@ -7,6 +7,10 @@ class PHCompositeNode;
 class PHPythiaHeader;
 class PHPythiaContainer;
 
+class TH1D;
+class TH2D;
+class TLorentzVector;
+
 class RccAnaPHPythia: public SubsysReco
 {
 public:
@@ -20,12 +24,12 @@ public:
 
   //std object to hold the last N photons (TMCParticle):
   std::vector<TLorentzVector> previousPhoton;
-  int maxPhotons=10;
-  int nProcessed=0;
+  int nProcessed;
 
   //settings:
-  Double_t pt_low = 0.1;
-  Double_t pt_high = 5.;
+  const  int maxPhotons=10;
+  const Double_t pt_low = 0.1;
+  const Double_t pt_high = 5.;
 
   //histograms to hold info about real and fake photons:
   TH1D *h_ptpi;

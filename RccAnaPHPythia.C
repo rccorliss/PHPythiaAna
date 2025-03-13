@@ -14,6 +14,11 @@
 #include <TMCParticle6.h>
 #endif
 
+#include <TLorentzVector.h>
+#include <TFile.h>
+#include <TH1D.h>
+#include <TH2D.h>
+
 #include <PHIODataNode.h>
 #include <PHObject.h>
 #include <PHCompositeNode.h>
@@ -42,6 +47,8 @@ RccAnaPHPythia::~RccAnaPHPythia()
 // Done at the beginning of processing
 int RccAnaPHPythia::InitRun(PHCompositeNode *topNode)
 {
+
+  nProcessed=0;
  h_ptpi             = new TH1D("h_ptpi","pt",100,pt_low,pt_high);
   h_pt_gpi           = new TH1D("h_pt_gpi","pt_g",100,pt_low,pt_high);
   h_eta_gpi           = new TH1D("h_eta_gpi","eta_g",100,0,8);
@@ -169,7 +176,7 @@ int RccAnaPHPythia::process_event(PHCompositeNode *topNode)
       h_massfakepi->Fill(fake.M());
       h_pt_fakegg->Fill(photon1.Pt(),previousPhoton[i].Pt());
       if (nPhotons>1) {
-        Tfake=photon2+previousPhoton[i];
+        fake=photon2+previousPhoton[i];
         h_massfakepi->Fill(fake.M());
         h_pt_fakegg->Fill(photon2.Pt(),previousPhoton[i].Pt());
       }
